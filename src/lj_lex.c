@@ -329,9 +329,10 @@ static int llex(LexState *ls, TValue *tv)
       next(ls);
       if (ls->current != '=') return '>'; else { next(ls); return TK_ge; }
     case '~':
+    case '!':
       next(ls);
       if (ls->current != '=') return '~'; else { next(ls); return TK_ne; }
-    case ':':
+     case ':':
       next(ls);
       if (ls->current != ':') return ':'; else { next(ls); return TK_label; }
     case '"':
